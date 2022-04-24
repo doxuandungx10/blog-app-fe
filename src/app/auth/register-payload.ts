@@ -1,4 +1,4 @@
-export class RegisterPayload {
+export interface RegisterPayload {
     username: String;
     email: String;
     password: String;
