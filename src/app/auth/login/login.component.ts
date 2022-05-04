@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -13,7 +14,7 @@ import { FormBuilder } from '@angular/forms';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loginPayload: LoginPayload
-  constructor(private authService: AuthService, private formBuilder: FormBuilder) {
+  constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) {
     this.loginForm = new FormGroup({
       username: new FormControl(),
       password: new FormControl()
@@ -35,8 +36,10 @@ export class LoginComponent implements OnInit {
       next: (data) => {
         if(data) {
           console.log('login success');
-        } else console.log('login failed');
-
+          this.router.navigateByUrl('/home')
+        } else {
+          console.log('login failed');
+        }
       },
       error: (e) => {
         console.error('register failed')

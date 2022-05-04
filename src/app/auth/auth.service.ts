@@ -29,4 +29,8 @@ export class AuthService {
       return true
     }))
   }
+
+  isAuthenticated(): Boolean {
+    return this.localStorageService.retrieve('username') != null;
+  }
 }

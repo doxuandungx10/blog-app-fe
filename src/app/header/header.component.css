@@ -8,7 +8,7 @@
     text-decoration: none;
 }
 
-.login, .register {
+.login, .register, .new-post {
     float: right;
     text-decoration: none;
     color: aliceblue;
