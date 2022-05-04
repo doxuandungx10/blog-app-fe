@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { PostPayload } from '../add-post/post-payload';
+import { AddPostService } from '../add-post.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  posts: Observable<Array<PostPayload>> | undefined;
+  constructor(private postService: AddPostService) { }
 
   ngOnInit(): void {
+    this.posts = this.postService.getAllPosts();
   }
 
 }
