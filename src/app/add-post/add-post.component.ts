@@ -1,8 +1,8 @@
-import { Router } from '@angular/router';
-import { AddPostService } from './../add-post.service';
-import { PostPayload } from './post-payload';
-import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
+import {PostPayload} from './post-payload';
+import {AddPostService} from '../add-post.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-post',
@@ -10,16 +10,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-post.component.css']
 })
 export class AddPostComponent implements OnInit {
+
   addPostForm: FormGroup;
-  postPayload: PostPayload
+  postPayload: PostPayload;
   title = new FormControl('');
   body = new FormControl('');
-  constructor(private addPostService: AddPostService,
-    private router: Router) {
+
+  constructor(private addpostService: AddPostService, private router: Router) {
     this.addPostForm = new FormGroup({
       title: this.title,
       body: this.body
-    })
+    });
     this.postPayload = {
       id: '',
       content: '',
@@ -28,19 +29,16 @@ export class AddPostComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   addPost() {
-    this.postPayload.content = this.addPostForm.get('body')?.value;
-    this.postPayload.title = this.addPostForm.get('title')?.value;
-    this.addPostService.addPost(this.postPayload).subscribe({
-      next: (v) => {
-        this.router.navigateByUrl('/');
-      },
-      error: (e) => {
-        console.error('failed')
-      }
-    });
+    this.postPayload.content = this.addPostForm.get('body').value;
+    this.postPayload.title = this.addPostForm.get('title').value;
+    this.addpostService.addPost(this.postPayload).subscribe(data => {
+      this.router.navigateByUrl('/home');
+    }, error => {
+      console.log('Failure Response');
+    })
   }
 }

@@ -1,12 +1,14 @@
-.add-post-content {
+.add-post-content{
+  height: 100%;
+  height:100vh;
   padding-top: 20px;
+  background-color: #E8F7DD ;
 }
 
-.new-post-title {
-  color: royalblue;
+.new-post-title{
+  color: #66B539;
 }
 
-.post-content,
-.post-title {
-  color: royalblue;
+.post-content, .post-title{
+  color: #66B539;
 }

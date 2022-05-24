@@ -1,16 +1,29 @@
-.header {
-    padding: 5px 30px;
-    background-color: royalblue;
+.header{
+  padding: 5px 20px;
+  background: #66B539;
 }
 
-.title {
-    color: aliceblue;
-    text-decoration: none;
+.title{
+  color: aliceblue;
+  text-decoration: none;
 }
 
-.login, .register, .new-post {
-    float: right;
-    text-decoration: none;
-    color: aliceblue;
-    padding-top: 10px;
+.login,.register, .logout,.new-post{
+  float: right;
+  text-decoration: none;
+  color: whitesmoke;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 20px;
 }
+
+.login:hover, .register:hover, .logout:hover, .new-post:hover{
+  background-color: #E8F7DD;
+  color: #374148;
+}
+
+
+
+

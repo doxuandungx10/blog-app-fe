@@ -1,0 +1,17 @@
+/* * {
+    margin-top: 0;
+    font-size: 100%;
+    background: transparent;
+} */
+*{
+    background-color: #E8F7DD ;
+}
+.home-container{
+    height: 100%;
+    height:100vh;
+    padding-top: 5%;
+    background-color: #E8F7DD ;
+}
+.blog-title{
+    color: #66B539;
+}

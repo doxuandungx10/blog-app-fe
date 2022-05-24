@@ -1,6 +1,6 @@
-export interface PostPayload {
-  id: string;
-  content: string;
-  title: string;
-  username: string
+export class PostPayload{
+  id: String;
+  content: String;
+  title: String;
+  username: String
 }

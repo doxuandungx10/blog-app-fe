@@ -9,7 +9,7 @@ export class RegisterSuccessComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }

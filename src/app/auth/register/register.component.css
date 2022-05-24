@@ -1,0 +1,25 @@
+* {
+    margin-top: 0;
+    font-size: 100%;
+    background: transparent;
+}
+.register-container{
+    height: 100%;
+    height:100vh;
+    padding-top: 5%;
+    background-color: #E8F7DD ;
+}
+
+.card{
+    background-color: whitesmoke;
+}
+
+.card-header{
+    background-color: #66B539;
+    color: #374148;
+    font-weight: bolder;
+    font-size: larger;
+} 
+.card-body{
+    font-size: medium;
+}

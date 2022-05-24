@@ -2,16 +2,46 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    background-color: #fff;
-    color: #555;
-    font-family: 'Lato', 'Arial', sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    text-rendering: optimizeLegibility;
+  background-color: #fff;
+  color: #555;
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+}
+
+.card {
+  width: 22%;
+  /* height: 600px; */
+  margin: 6% auto;
+}
+
+.card-header {
+  text-align: center;
+}
+
+.card-body form {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input-popup {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.footer {
+  margin: 0px auto;
+}
+
+.btn-footer {
+  width: 100%;
 }

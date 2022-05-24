@@ -1,17 +1,42 @@
-<div class="content">
+<app-header></app-header>
+<div class="post-container">
+  <div class="post-content">
     <div class="container">
       <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-8">
-          <h1 class="blog-title">{{post.title}}</h1>
-          <span>
-                    <p>by {{post.username}}</p>
-                </span>
+          <h1 class="post-title">{{post.title}}</h1>
+          <span style="display: flex;">
+            <p>Author: </p>
+            <p class="post-author">{{post.username}}</p>
+          </span>
           <hr>
           <p [innerHTML]="post.content"></p>
           <hr>
         </div>
       </div>
-  
     </div>
   </div>
+  <div class="comment-section-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+          <div class="comment-box-container">
+            <textarea class="comment-box" [(ngModel)]="comment" name="" id="commentBox" cols="30" rows="10" placeholder="Add a comment..."></textarea>
+            <button class="comment-button" (click)="submitComment()" style="background-color: #66B539; border: #66B539; width: 130px; height: 50px;" class="btn btn-primary btn-footer">
+              Comment
+            </button>
+          </div>
+          <div class="comment-section" *ngFor = "let item of listComment; index as i;">
+            <div class="comment-username">
+              <p class="comment-username text">{{item.username}}</p>
+              <p class="comment-username date">{{item.createOn | date:'short'}}</p>
+            </div>
+            <div class="comment-content">{{item.comment}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
